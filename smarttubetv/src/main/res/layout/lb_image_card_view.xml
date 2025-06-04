@@ -1,20 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- MOD: add image wrapper, move layout_viewType attr from the main image -->
-
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
-       xmlns:app="http://schemas.android.com/apk/res-auto">
+       xmlns:app="http://schemas.android.com/apk/res-auto"
+       xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- NOTE: layout_viewType moved from the nested main image -->
+    <!-- Image with rounded corners and shadow -->
     <com.liskovsoft.smartyoutubetv2.tv.ui.widgets.complexcardview.ComplexImageView
         android:id="@+id/main_image_wrapper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_viewType="main">
-    </com.liskovsoft.smartyoutubetv2.tv.ui.widgets.complexcardview.ComplexImageView>
+        android:scaleType="centerCrop"
+        app:layout_viewType="main"
+        android:background="?attr/selectableItemBackground"
+        android:clipToOutline="true"
+        tools:src="@drawable/sample_thumb" />
 
+    <!-- Info overlay (title, badges, etc.) -->
     <androidx.leanback.widget.NonOverlappingRelativeLayout
         android:id="@+id/info_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/transparent"
+        android:padding="8dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="bottom"
         style="?attr/imageCardViewInfoAreaStyle">
+
+        <!-- Example title -->
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="Sample Video Title"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="4dp"
+            tools:ignore="MissingConstraints"/>
+
     </androidx.leanback.widget.NonOverlappingRelativeLayout>
 
 </merge>
