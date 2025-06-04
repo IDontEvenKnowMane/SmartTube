@@ -1,72 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Color of currently focused player control -->
-    <color name="lb_control_button_color_origin">#66EEEEEE</color>
-    <color name="lb_control_button_color">#E8FFFFFF</color>
+    <!-- Background colors -->
+    <color name="background_dark">#121212</color>           <!-- Almost pure black, clean and modern -->
+    <color name="surface_dark">#1E1E1E</color>              <!-- Slightly lighter for cards, panels -->
+    <color name="overlay_dark">#2C2C2C</color>              <!-- For overlays and shadows -->
 
-    <!-- Common colors -->
-    <color name="default_background_gradient_start">#000000</color>
-    <color name="default_background_gradient_end">#DDDDDD</color>
-    <color name="fastlane_background">#0096a6</color>
-    <color name="fastlane_background_dark">#004B53</color>
-    <color name="default_light_grey">#343434</color>
-    <color name="search_opaque">#0096a6</color>
-    <color name="search_opaque_yellow">#ffaa3f</color>
+    <!-- Primary colors -->
+    <color name="primary_dark">#BB86FC</color>              <!-- Soft purple accent, modern and sleek -->
+    <color name="primary_variant">#985EFF</color>           <!-- Darker purple for highlights -->
 
-    <!-- Card view colors -->
-    <color name="card_selected_background_white">#FFFFFF</color>
-    <color name="card_selected_background_white_grey">#D3D3D3</color>
-    <color name="card_selected_background_yellow">#ffaa3f</color>
-    <color name="card_selected_background_grey">#343434</color>
-    <color name="card_selected_text_black">#000000</color>
-    <color name="card_selected_text_grey">#343434</color>
-    <color name="card_default_background">#0096a6</color>
-    <color name="card_default_background_dark">#004B53</color>
-    <color name="card_default_text">#FFFFFF</color>
+    <!-- Accent colors -->
+    <color name="accent_color">#03DAC6</color>               <!-- Teal accent for buttons/links -->
 
-    <!-- Browse fragment colors -->
-    <color name="shelf_background">#282828</color>
-    <color name="shelf_background_dark">#131313</color>
-    <color name="icon_background">#4A4F51</color>
-    <color name="icon_alt_background">#2A2F51</color>
-    <color name="player_background">#FF000000</color>
+    <!-- Text colors -->
+    <color name="text_primary">#FFFFFF</color>               <!-- Pure white for main text -->
+    <color name="text_secondary">#B3B3B3</color>             <!-- Light grey for secondary text -->
+    <color name="text_disabled">#666666</color>              <!-- Dark grey for disabled elements -->
 
-    <!-- Dark color scheme -->
-    <color name="scheme_grey_background">#181818</color>
-    <color name="scheme_grey_background_dark">#181818</color>
-    <color name="scheme_grey_shelf_background_dark">#000000</color>
-    <color name="scheme_grey_card_background_dark">#121212</color>
+    <!-- Card colors -->
+    <color name="card_background">#1E1E1E</color>            <!-- Matches surface_dark -->
+    <color name="card_selected_background">#333333</color>   <!-- Darker for selected card -->
 
-    <!-- Red color scheme -->
-    <color name="scheme_red_background">#131313</color>
-    <color name="scheme_red_background_dark">@color/dark_red</color>
-    <color name="scheme_red_shelf_background_dark">#131313</color>
-    <color name="scheme_red_card_background_dark">#36474f</color>
+    <!-- Progress bar colors -->
+    <color name="progress_primary">#BB86FC</color>           <!-- Matches primary dark -->
+    <color name="progress_secondary">#985EFF</color>         <!-- Matches primary variant -->
 
-    <!-- Blue color scheme -->
-    <color name="scheme_blue_background">#33B5E5</color>
-    <color name="scheme_blue_background_dark">#207EA1</color>
+    <!-- Navigation bar background (if used) -->
+    <color name="navigation_bar">#121212</color>
 
-    <!-- Vineyard -->
-    <color name="black_87pc">#77000000</color>
-    <color name="primary_dark">#00796B</color>
-    <color name="primary_light">#B2DFDB</color>
-    <color name="primary">#009688</color>
-    <color name="white_87pc">#DDFFFFFF</color>
+    <!-- Divider lines -->
+    <color name="divider">#2E2E2E</color>
 
-    <!-- Tooltip mod: extracted private values -->
-    <color name="tooltip_background_dark_mod">#e6616161</color>
-    <color name="tooltip_background_light_mod">#e6FFFFFF</color>
-    <color name="foreground_material_dark_mod">@android:color/white</color>
-    <color name="foreground_material_light_mod">@android:color/black</color>
+    <!-- Shadow or subtle borders -->
+    <color name="shadow_color">#00000080</color>              <!-- Black at 50% opacity -->
+    
+    <style name="App.Theme.ModernDark.Browse" parent="Theme.Leanback.Browse">
+    <item name="android:windowBackground">@color/background_dark</item>
+    <item name="brandColor">@color/primary_dark</item>
+    <item name="brandAccentColor">@color/accent_color</item>
+    <item name="shelfBackground">@color/surface_dark</item>
+    <item name="cardDefaultBackground">@color/card_background</item>
+    <item name="cardSelectedBackground">@color/card_selected_background</item>
+    <item name="android:colorAccent">@color/accent_color</item>
+    <item name="android:textColorPrimary">@color/text_primary</item>
+    <item name="android:textColorSecondary">@color/text_secondary</item>
+    <!-- Other attributes like grid spacing, animations, etc -->
+</style>
 
-    <!-- Default Orb buttons colors: search, accounts, search settings etc -->
-    <color name="orb_color">@color/grey</color>
-    <color name="orb_bright_color">@color/grey</color>
-    <color name="orb_icon_color">@color/white</color>
+<style name="App.Theme.ModernDark.Player" parent="Theme.Leanback">
+    <item name="android:windowBackground">@color/background_dark</item>
+    <item name="shelfBackground">@color/surface_dark</item>
+    <item name="cardDefaultBackground">@color/card_background</item>
+    <item name="cardSelectedBackground">@color/card_selected_background</item>
+    <item name="android:colorAccent">@color/accent_color</item>
+    <item name="playbackProgressPrimaryColor">@color/progress_primary</item>
+    <item name="playbackProgressSecondaryColor">@color/progress_secondary</item>
+    <!-- Other player-related styles -->
+</style>
 
-    <!-- Search page mic button color -->
-    <color name="lb_speech_orb_not_recording">@color/orb_color</color>
-    <color name="lb_speech_orb_not_recording_pulsed">@color/orb_bright_color</color>
-    <color name="lb_speech_orb_not_recording_icon">@color/orb_icon_color</color>
+
 </resources>
